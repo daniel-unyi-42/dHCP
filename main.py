@@ -8,7 +8,7 @@ path = '/home/daniel/data/release/'
 # hyperparameters
 bs = 8
 lr = 0.001
-epochs = 500
+epochs = 200
 hidden = 64
 features = 'pos+norm+dha+x'
 

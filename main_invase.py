@@ -8,7 +8,7 @@ path = '/home/daniel/data/release/'
 # hyperparameters
 bs = 8
 lr = 0.001
-epochs = 500
+epochs = 200
 hidden = 64
 features = 'pos+norm+dha+x'
 
@@ -118,7 +118,7 @@ class Invase():
         self.actor = self.actor.to(device)
         self.actor.optimizer = torch.optim.AdamW(self.actor.parameters(), lr=lr)
         self.actor.criterion = self.actor_loss
-        self.lambda_ = 1.0
+        self.lambda_ = 10.0
 
     def actor_loss(self, actor_pred, actor_out, critic_out, baseline_out, y_true):
         critic_loss = F.mse_loss(critic_out, y_true)

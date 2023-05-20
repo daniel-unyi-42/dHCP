@@ -73,6 +73,7 @@ def get_data(path, task, ids):
             x = np.stack(feature.agg_data(), axis=1)
             y = np.array([[df.loc[df['ID'] == _id, task].item()]])
             data = Data()
+            data.id = _id
             if 'x' in features:
                 data.x = torch.from_numpy(x).to(torch.float32)
             data.pos = torch.from_numpy(pos).to(torch.float32)

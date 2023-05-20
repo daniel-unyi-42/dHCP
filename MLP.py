@@ -30,7 +30,7 @@ class MLP(nn.Module):
         if data.x is not None:
             x = torch.cat([x, data.x], dim=1)
         if selection is not None:
-            x = (x * data.selection).float()
+            x = (x * selection).float()
         x = self.bn0(x)
         x = self.bn1(self.act(self.fc1(x)))
         x = self.bn2(self.act(self.fc2(x)))

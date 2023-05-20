@@ -40,7 +40,7 @@ import matplotlib.pyplot as plt
 log_dir=f'runs/invase/{task}/{model_name}/features={features}/bs={bs}_lr={lr}_epoch={epochs}_hidden={hidden}'
 writer = SummaryWriter(log_dir)
 
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
 
 train_ids = pd.read_csv(task + '_train.txt', header=None)
 val_ids = pd.read_csv(task + '_val.txt', header=None)
